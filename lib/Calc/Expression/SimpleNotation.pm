@@ -11,6 +11,17 @@ use Calc::LexemeFactory;
 
 use base qw( Calc::Expression );
 
+use constant ALLOWED_LEXEME_TYPES => [qw( number operator bracket_left bracket_right )];
+
+
+=head2 C<_get_allowed_lexeme_types>
+
+Получить список разрешенных типов лексем для данного выражения
+
+=cut
+
+sub _get_allowed_lexeme_types { ALLOWED_LEXEME_TYPES }
+
 
 =head2 C<_parse>($expression_string)
 
