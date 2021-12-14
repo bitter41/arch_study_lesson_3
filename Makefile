@@ -1,11 +1,10 @@
-all: build tests run
+all: build test tests
 build:
-	docker build -t archstudylesson2 .
+	docker build -t archstudylesson3 .
 tests:
-	docker run -it --rm --name archstudylesson2 archstudylesson2 prove ./t
+	docker run -it --rm --name archstudylesson3 archstudylesson3 prove -r ./t
 run:
-	docker run -it --rm --name archstudylesson2 archstudylesson2
+	docker run -it --rm --name archstudylesson3 archstudylesson3
 test:
-	docker run -it --rm --name archstudylesson2 archstudylesson2 perl ./t/__convert_to_reverse_polish_notation.t
-	docker run -it --rm --name archstudylesson2 archstudylesson2 perl ./t/convert_to_reverse_polish_notation_int.t
-	docker run -it --rm --name archstudylesson2 archstudylesson2 perl ./t/calc_expression_int.t
+	docker run -it --rm --name archstudylesson3 archstudylesson3 perl ./t/Calc/Expression/SimpleNotation/_parse.t
+

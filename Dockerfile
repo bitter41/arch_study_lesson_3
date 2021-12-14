@@ -1,6 +1,6 @@
 FROM perl
 
-RUN cpanm install Test::Spec
+RUN cpanm install Test::Spec Data::Structure::Util
 
 COPY . /usr/src/calc
 WORKDIR /usr/src/calc
