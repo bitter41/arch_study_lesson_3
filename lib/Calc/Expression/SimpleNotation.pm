@@ -23,7 +23,7 @@ sub _parse {
     my @expression     = ();
 
     my $lexeme_factory = Calc::LexemeFactory->new();
-    my %known_lexemes  = $lexeme_factory->get_known_lexemes();
+    my @known_lexemes  = $lexeme_factory->get_known_lexemes();
 
     $expression_string =~ s/\s+//g; # Сразу избавимся от пробелов
 
@@ -32,7 +32,7 @@ sub _parse {
     while ($expression_string) {
 
         $unknown_lexeme_found = 1;
-        foreach my $lexeme_regexp (keys %known_lexemes) {
+        foreach my $lexeme_regexp (@known_lexemes) {
             if ( $expression_string =~ s/($lexeme_regexp)// ) {
                 push @expression, $lexeme_factory->create($1);
                 $unknown_lexeme_found = 0;

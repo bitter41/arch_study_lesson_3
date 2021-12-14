@@ -18,7 +18,9 @@ use Calc::LexemeFactory;
 sub new {
     my ($class, $expression_string) = @_;
 
-    my $self = {};
+    my $self = {
+        _expression => [],
+    };
 
     bless $self, $class;
 
@@ -26,6 +28,7 @@ sub new {
 
     return $self;
 }
+
 
 =head2 C<_parse>($expression_string)
 
@@ -37,7 +40,33 @@ sub new {
 sub _parse {
     my ($self, $expression_string) = @_;
 
-    die 'Abstract methon, must be implemented';
+    die 'Abstract method, must be implemented';
 }
+
+
+=head2 C<push>($lexeme_obj)
+
+Поместить лексему в конец выражения
+
+=cut
+
+sub push {
+    my ($self, $lexeme_obj) = @_;
+
+    push @{$self->{_expression}}, $lexeme_obj;
+}
+
+=head2 C<push>($lexeme_obj)
+
+Извлечь лексему с конца выражения
+
+=cut
+
+sub pop {
+    my ($self) = @_;
+
+    return pop @{$self->{_expression}};
+}
+
 
 1;
