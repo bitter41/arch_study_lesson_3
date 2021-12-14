@@ -6,5 +6,5 @@ tests:
 run:
 	docker run -it --rm --name archstudylesson3 archstudylesson3
 test:
-	docker run -it --rm --name archstudylesson3 archstudylesson3 perl ./t/Calc/Expression/SimpleNotation/_parse_int.t
+	docker run -it --rm --name archstudylesson3 archstudylesson3 perl ./t/Calc/ExpressionConvertor/SimpleToReversePolish/main_int.t
 

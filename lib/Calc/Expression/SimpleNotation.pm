@@ -2,7 +2,7 @@ package Calc::Expression::SimpleNotation;
 
 =head1 DESCRIPTION
 
-Класс, представляющий математическое выражение в простой форме
+Класс представляющий математическое выражение в простой форме
 
 =cut
 
@@ -10,6 +10,7 @@ use Data::Dumper;
 use Calc::LexemeFactory;
 
 use base qw( Calc::Expression );
+
 
 =head2 C<_parse>($expression_string)
 
@@ -53,5 +54,6 @@ sub _parse {
 
     $self->{_expression} = \@expression;
 }
+
 
 1;
