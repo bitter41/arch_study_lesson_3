@@ -1,4 +1,4 @@
-all: build test tests run
+all: build tests run
 build:
 	docker build -t archstudylesson3 .
 tests:
