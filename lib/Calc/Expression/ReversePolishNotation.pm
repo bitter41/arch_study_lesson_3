@@ -32,8 +32,18 @@ sub _get_allowed_lexeme_types { ALLOWED_LEXEME_TYPES }
 sub _parse {
     my ($self, $expression_string) = @_;
 
-    # TODO: Открытая возможность научить приложение принимать на входе от клиента обратную польскую запись
-    die 'Not implemented yet';
+    my @expression     = ();
+
+    my $lexeme_factory = Calc::LexemeFactory->new();
+
+    # Здесь более простая реализация парсера по сравнению с Calc::Expression::SimpleNotation
+    # Этот парсер просто разбирает строку на лексемы на основе пробела в качестве разделителя
+    my @lexemes_as_string_array = split / /, $expression_string;
+    foreach my $lexeme_string (@lexemes_as_string_array) {
+        push @expression, $lexeme_factory->create($lexeme_string);
+    }
+
+    $self->{_expression} = \@expression;
 }
 
 

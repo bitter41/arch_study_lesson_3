@@ -45,7 +45,7 @@ sub _convert {
         my $lexeme_type = $lexeme->get_type();
 
         if ($lexeme_type eq 'number') {
-            $self->{_dst_expression}->push($lexeme);
+            $self->get_dst_expression()->push($lexeme);
         }
         elsif ($lexeme_type eq 'operator') {
             $self->__unload_operators($lexeme);
@@ -80,7 +80,7 @@ sub __unload_stack {
             $stop_lexeme_found = 1;
             last;
         }
-        $self->{_dst_expression}->push($lexeme);
+        $self->get_dst_expression()->push($lexeme);
     }
 
     if ($stop_lexeme_type && !$stop_lexeme_found) {
@@ -117,7 +117,7 @@ sub __unload_operators {
             last;
         }
 
-        $self->{_dst_expression}->push($lexeme);
+        $self->get_dst_expression()->push($lexeme);
     }
 
     return 1;

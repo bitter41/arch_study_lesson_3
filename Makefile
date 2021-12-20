@@ -1,4 +1,4 @@
-all: build test tests
+all: build test tests run
 build:
 	docker build -t archstudylesson3 .
 tests:
@@ -6,5 +6,5 @@ tests:
 run:
 	docker run -it --rm --name archstudylesson3 archstudylesson3
 test:
-	docker run -it --rm --name archstudylesson3 archstudylesson3 perl ./t/Calc/ExpressionConvertor/SimpleToReversePolish/main_int.t
+	docker run -it --rm --name archstudylesson3 archstudylesson3 perl ./t/Calc/Calculator/ReversePolish/main_int.t
 

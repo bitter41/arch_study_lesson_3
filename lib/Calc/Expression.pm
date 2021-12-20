@@ -120,12 +120,10 @@ sub get_lexemes {
 sub get_as_string {
     my ($self) = @_;
 
-    my $expression = '';
-    foreach (@{$self->get_lexemes()}) {
-        $expression .= $_->get_value();
-    }
+    my @expression_values_array = map { $_->get_value() } @{$self->get_lexemes()};
+    my $expression_as_string    = join ' ', @expression_values_array;
 
-    return $expression;
+    return $expression_as_string;
 }
 
 

@@ -46,15 +46,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '2+3X45/2%';
+                is $convertor->_get_src_expression()->get_as_string(), '2 + 3 X 45 / 2 %';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '';
+                is $convertor->get_dst_expression()->get_as_string(), '';
             };
         };
 
@@ -89,15 +89,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '(1+2*4+3';
+                is $convertor->_get_src_expression()->get_as_string(), '( 1 + 2 * 4 + 3';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '';
+                is $convertor->get_dst_expression()->get_as_string(), '';
             };
 
         };
@@ -133,15 +133,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '((1+2)*4+3';
+                is $convertor->_get_src_expression()->get_as_string(), '( ( 1 + 2 ) * 4 + 3';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '';
+                is $convertor->get_dst_expression()->get_as_string(), '';
             };
 
         };
@@ -178,15 +178,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '(1(+2()*4+3';
+                is $convertor->_get_src_expression()->get_as_string(), '( 1 ( + 2 ( ) * 4 + 3';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '';
+                is $convertor->get_dst_expression()->get_as_string(), '';
             };
 
         };
@@ -223,15 +223,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '(1+2)*)4+3(';
+                is $convertor->_get_src_expression()->get_as_string(), '( 1 + 2 ) * ) 4 + 3 (';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '';
+                is $convertor->get_dst_expression()->get_as_string(), '';
             };
 
         };
@@ -267,15 +267,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '(1+2)*)4+3';
+                is $convertor->_get_src_expression()->get_as_string(), '( 1 + 2 ) * ) 4 + 3';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '';
+                is $convertor->get_dst_expression()->get_as_string(), '';
             };
 
         };
@@ -307,15 +307,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '2+3';
+                is $convertor->_get_src_expression()->get_as_string(), '2 + 3';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '23+';
+                is $convertor->get_dst_expression()->get_as_string(), '2 3 +';
             };
 
         };
@@ -345,15 +345,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '(1+2)*4+3';
+                is $convertor->_get_src_expression()->get_as_string(), '( 1 + 2 ) * 4 + 3';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '12+4*3+';
+                is $convertor->get_dst_expression()->get_as_string(), '1 2 + 4 * 3 +';
             };
 
         };
@@ -383,15 +383,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '1+2*4-3';
+                is $convertor->_get_src_expression()->get_as_string(), '1 + 2 * 4 - 3';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '124*+3-';
+                is $convertor->get_dst_expression()->get_as_string(), '1 2 4 * + 3 -';
             };
 
         };
@@ -421,15 +421,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '((1+2)*4+6)/3';
+                is $convertor->_get_src_expression()->get_as_string(), '( ( 1 + 2 ) * 4 + 6 ) / 3';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '12+4*6+3/';
+                is $convertor->get_dst_expression()->get_as_string(), '1 2 + 4 * 6 + 3 /';
             };
 
         };
@@ -459,15 +459,15 @@ describe 'Calc::ExpressionConvertor::SimpleToReversePolish int: ' => sub {
             };
 
             it '_src_expression check for &get_as_string' => sub {
-                is $convertor->_get_src_expression()->get_as_string(), '(1+2)*14/6+2*(3+2)';
+                is $convertor->_get_src_expression()->get_as_string(), '( 1 + 2 ) * 14 / 6 + 2 * ( 3 + 2 )';
             };
 
             it '_dst_expression is ReversePolishNotation' => sub {
-                is ref $convertor->_get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
+                is ref $convertor->get_dst_expression(), 'Calc::Expression::ReversePolishNotation';
             };
 
             it '_dst_expression has right value' => sub {
-                is $convertor->_get_dst_expression()->get_as_string(), '12+14*6/232+*+';
+                is $convertor->get_dst_expression()->get_as_string(), '1 2 + 14 * 6 / 2 3 2 + * +';
             };
 
         };
